@@ -7,66 +7,124 @@
 }
 
 html {
-  /* font-size: 10px; */
-
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-  overflow-x: hidden;
-
-  /* Does NOT work on Safari */
-  /* scroll-behavior: smooth; */
+  font-size: 100%;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  line-height: 1;
+  line-height: 16px;
+  box-sizing: border-box;
   font-weight: 400;
-  color: #555;
-
-  /* Only works if there is nothing absolutely positioned in relation to body */
-  overflow-x: hidden;
+  color: #000;
 }
 
 main {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  justify-content: space-between;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .container {
   display: flex;
+  height: 100vh;
 }
 
 .sidebar {
   background-color: #191718;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 10%;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .side-nav {
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.side-nav__item {
+  height: 44px;
+  width: 150px;
+}
+
+.side-nav__item:hover {
+  background-color: #5c5c5c;
+}
+
+.side-nav__item:hover a {
+  color: #fff;
+}
+
+.side-nav__link,
 .side-nav__link:link,
 .side-nav__link:visited {
-  align-items: center;
-  color: #fff;
+  color: #aaa;
   display: block;
-  padding: 1.5rem 3rem;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
+.side-nav__link--active:link,
+.side-nav__link--active:visited {
+  color: #fff;
+}
+
 .group234 {
-  display: flex;
+  display: grid;
+  gap: 50px;
+}
+
+.group234 h2 {
+  margin: 18px;
 }
 
 .content {
-  height: 93vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.group1 {
+  background-color: #efefef;
+  text-align: center;
+  margin: 30px 0;
+  padding: 38px;
+}
+
+.group1 h2 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.group1-description {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.group1 p {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.footer {
+  border-top: 1px solid #aaa;
+  flex-basis: 60px;
+  color: #3e3e3e;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+figure {
+  float: left;
+  margin-right: 16px;
 }
